@@ -1,8 +1,25 @@
 # Gmail Invoice Automation Demo
 
-A small Google Apps Script portfolio project that automates a practical Google Workspace workflow:
+A working Google Apps Script portfolio project for a common small-business workflow:
 
-**Gmail → extract invoice/receipt data → Google Sheets → save PDF attachments to Google Drive**
+**Gmail → identify invoice/receipt emails → preview extracted data → Google Sheets → save PDF attachments to Google Drive**
+
+## Business problem
+
+Invoice and receipt intake often involves repetitive manual work: finding relevant emails, copying basic fields into a spreadsheet, saving attachments, and avoiding duplicate entries.
+
+This demo turns that bounded workflow into an auditable automation. It can:
+
+- find recent invoice / receipt emails
+- extract sender, date, subject, and a best-effort total
+- preview matches before production writes
+- record structured results in Google Sheets
+- save PDF attachments to Google Drive
+- prevent duplicate processing using Gmail message IDs
+- label processed threads
+- record failures in a dedicated error sheet
+
+**Portfolio signal:** this project demonstrates taking a real Google Workspace workflow from manual steps to a working, configurable, handoff-ready automation rather than only writing an isolated script.
 
 ## What it demonstrates
 
@@ -40,6 +57,20 @@ Tested with synthetic data.
 - PDF attachment save to Drive: PASS
 - processed Gmail label: PASS
 - duplicate-safe re-run: PASS
+
+See [DEMO_RESULTS.md](DEMO_RESULTS.md) for the recorded bounded test result.
+
+## Example client fit
+
+The same implementation pattern can be adapted to bounded Google Workspace workflows such as:
+
+- invoice / receipt intake
+- email-to-spreadsheet data capture
+- attachment collection and filing
+- lightweight operational logs
+- repetitive Gmail / Sheets / Drive workflows
+
+The exact extraction rules and workflow should be adapted to the client's real inputs and review requirements.
 
 ## Security / privacy
 
