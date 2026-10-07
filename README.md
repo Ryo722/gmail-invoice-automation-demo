@@ -60,6 +60,10 @@ Tested with synthetic data.
 
 See [DEMO_RESULTS.md](DEMO_RESULTS.md) for the recorded bounded test result.
 
+## Client-facing service offer
+
+For a bounded version of this work that can be discussed as a client engagement, see [SERVICE_OFFER.md](SERVICE_OFFER.md).
+
 ## Example client fit
 
 The same implementation pattern can be adapted to bounded Google Workspace workflows such as:
