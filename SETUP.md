@@ -93,3 +93,16 @@ Confirm:
 - the Gmail thread receives the processed label
 
 Run `processInvoiceEmails()` again and confirm that the same message is not duplicated.
+
+## Optional: v0.2 Safe Intake (review-gated)
+
+Steps 7–8 above use the legacy direct path, which writes without review. To use the
+review gate instead, run `setupSafeIntake()`, `refreshReviewQueue()`, set Decision values
+in the `Review` sheet, then run `processApprovedReviewRows()`. The full operator flow,
+the synthetic walkthrough, reconciliation and rollback are in [SAFE_INTAKE.md](SAFE_INTAKE.md).
+
+Do not run the legacy `processInvoiceEmails()` in the same deployment if every write
+must be reviewed.
+
+If you use `clasp`, the included `.claspignore` pushes only `Code.gs` and
+`appsscript.json` (not the local tests).
