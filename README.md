@@ -19,6 +19,8 @@ This demo turns that bounded workflow into an auditable automation. It can:
 - label processed threads
 - record failures in a dedicated error sheet
 
+**v0.2 Safe Intake (opt-in):** a `Review` sheet where an operator sets APPROVE / HOLD / SKIP (with optional, validated amount/currency corrections) before the Safe Intake path writes PDFs, Records rows or Gmail labels. Processing is lock-serialized, re-runnable and fail-visible on conflicts. See [SAFE_INTAKE.md](SAFE_INTAKE.md). The original direct `processInvoiceEmails()` entry point is kept for compatibility and is **not** review-gated.
+
 **Portfolio signal:** this project demonstrates taking a real Google Workspace workflow from manual steps to a working, configurable, handoff-ready automation rather than only writing an isolated script.
 
 ## What it demonstrates
@@ -60,6 +62,12 @@ Tested with synthetic data.
 
 See [DEMO_RESULTS.md](DEMO_RESULTS.md) for the recorded bounded test result.
 
+v0.2 Safe Intake is verified with local automated tests only (no Google account needed):
+
+```sh
+node --test tests/*.test.js
+```
+
 ## Client-facing service offer
 
 For a bounded version of this work that can be discussed as a client engagement, see [SERVICE_OFFER.md](SERVICE_OFFER.md).
@@ -99,7 +107,7 @@ Only add these when a real project requires them:
 
 - AI extraction for inconsistent email/PDF formats
 - OCR
-- approval/review queues
+- approver identity / multi-step approval (v0.2 provides a single Sheets review gate)
 - Slack / Google Chat notifications
 - API / webhook integrations
 - scheduled execution and alerts

@@ -1,0 +1,11 @@
+{
+  "name": "gmail-invoice-automation-demo",
+  "private": true,
+  "description": "Google Apps Script demo; package.json exists only to run the local, dependency-free tests.",
+  "scripts": {
+    "test": "node --test tests/*.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
